@@ -1,0 +1,50 @@
+# Café Queene Website
+
+Student Information
+Full Name: Thandazo Queene Mavuso
+Student Number: ST10525438
+Module: Web Development
+
+
+ Project Overview
+Café Queene is a modern coffee shop founded in 2025 by Queene Mavuso, offering specialty coffee alongside a full breakfast and lunch menu. This project involves designing and building a functional, visually appealing website for Café Queene using HTML, CSS, and JavaScript. The website introduces the brand, showcases the menu, and makes it easy for customers to find and contact the business. Café Queene operates from two branches, located in Middelburg and Nelspruit.
+
+Website Goals and Objectives
+- Introduce Café Queene as a new, modern coffee shop and build brand awareness online.
+- Clearly showcase the menu (coffee, breakfast, and lunch) and the café's atmosphere.
+- Make it easy for visitors to contact the café or find both branch locations.
+- Encourage visitors to become regular, returning customers.
+
+## Key Features and Functionality
+- **Home page** – introduces the brand and atmosphere, with a hero image and call to action.
+- **About Us page** – tells the Café Queene story, mission, and vision.
+- **Menu page** – displays the full menu (coffee, breakfast, and lunch items).
+- **Enquiry page** – a form for visitors to ask questions or make bookings.
+- **Contact page** – shows both the Middelburg and Nelspruit branches on a map, along with a contact form and opening hours.
+- Consistent navigation menu across all pages for easy movement between sections.
+
+Timeline and Milestones
+| Week | Activity |
+|------|----------|
+| Week 1 | Research, planning, and wireframing |
+| Week 2 | Building the HTML structure and adding content |
+| Week 3 | Styling and visual design |
+| Week 4 | Testing, refinement, and final submission |
+
+Part 1 Details
+Part 1 covers project initiation and planning: choosing a target organisation (Café Queene), writing the website project proposal, researching and gathering content, planning the sitemap and file/folder structure, and building the basic HTML structure for all five pages.
+ 
+## Change log
+ ### References
+
+MDN Web Docs. 2025. *Your first website*. Available at: [https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+
+MDN Web Docs. 2025. *Web technology for developers*. Available at: [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+
+MDN Web Docs. 2025. *What is JavaScript?* Available at: [https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+
+Rosebank College. 2026. *Web Development Module Manual*. Rosebank College.
+
+OpenAI. 2026. *ChatGPT*. Available at: [https://chatgpt.com/](https://chatgpt.com/?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+
+Part 2 of POE

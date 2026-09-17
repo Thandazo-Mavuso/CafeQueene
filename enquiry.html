@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry | Café Queene — Middelburg &amp; Nelspruit</title>
+  <meta name="description" content="Send an enquiry or book a space at Café Queene in Middelburg or Nelspruit." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <div class="nav__brand">
+        <svg class="nav__crown" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M3 8L7 11L12 5L17 11L21 8L19 17H5L3 8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+          <line x1="5.5" y1="19" x2="18.5" y2="19" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <a href="index.html" class="nav__logo">Café <span>Queene</span></a>
+      </div>
+
+      <ul class="nav__links" id="primary-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="enquiry.html" aria-current="page">Enquiry</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- PAGE HEADER -->
+    <section class="section">
+      <div class="container text-center">
+        <p class="eyebrow">Get in Touch</p>
+        <h1 class="section-title">Send us an Enquiry</h1>
+        <p style="color: var(--color-text-muted); max-width: 600px; margin: -1.5rem auto 0;">
+          Planning a study session, a group get-together, or have a question for our team? Fill out the form below.
+        </p>
+      </div>
+    </section>
+
+    <!-- ENQUIRY FORM SECTION -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container" style="max-width: 700px;">
+        <div style="background-color: var(--color-surface); padding: 3rem; border-radius: var(--radius); border: 1px solid var(--color-border);">
+          
+          <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="name" style="font-weight: 600; font-size: 0.95rem;">Your Name</label>
+              <input type="text" id="name" name="name" required placeholder="e.g. Queene Mavuso" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="email" style="font-weight: 600; font-size: 0.95rem;">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="e.g. name@example.com" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="branch" style="font-weight: 600; font-size: 0.95rem;">Select Branch</label>
+              <select id="branch" name="branch" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
+                <option value="middelburg">Middelburg Branch (28 Joubert St)</option>
+                <option value="nelspruit">Nelspruit Branch (41 Ferreira St)</option>
+              </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <label for="message" style="font-weight: 600; font-size: 0.95rem;">Your Message / Enquiry</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us what you need..." style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text); resize: vertical;"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn--primary" style="width: 100%; border: none; margin-top: 0.5rem; cursor: pointer;">Submit Enquiry</button>
+
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Café Queene</h4>
+        <p>Good coffee and good food in Middelburg and Nelspruit. Come as you are, stay as long as you like.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Visit</h4>
+        <ul>
+          <li><a href="contact.html">Middelburg Branch</a></li>
+          <li><a href="contact.html">Nelspruit Branch</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>&copy; 2026 Café Queene. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
