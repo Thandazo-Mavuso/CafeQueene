@@ -1,33 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
-    <loc>https://YOUR-SITE-URL/</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://thandazo-mavuso.github.io/CafeQueene/</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>1.0</priority>
   </url>
+
   <url>
-    <loc>https://YOUR-SITE-URL/about.html</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://thandazo-mavuso.github.io/CafeQueene/about.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.8</priority>
   </url>
+
   <url>
-    <loc>https://YOUR-SITE-URL/menu.html</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://thandazo-mavuso.github.io/CafeQueene/menu.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.9</priority>
   </url>
+
   <url>
-    <loc>https://YOUR-SITE-URL/enquiry.html</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://thandazo-mavuso.github.io/CafeQueene/enquiry.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.7</priority>
   </url>
+
   <url>
-    <loc>https://YOUR-SITE-URL/contact.html</loc>
-    <lastmod>2026-11-01</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://thandazo-mavuso.github.io/CafeQueene/contact.html</loc>
+    <lastmod>2026-11-02</lastmod>
     <priority>0.8</priority>
   </url>
+
 </urlset>
