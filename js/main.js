@@ -728,3 +728,67 @@ function showEmailPreview(form) {
   preview.hidden = false;
   preview.focus();
 }
+// Café Queene — Interactive Branch Map
+document.addEventListener("DOMContentLoaded", function () {
+
+  const mapElement = document.getElementById("branch-map");
+
+  if (!mapElement || typeof L === "undefined") {
+    return;
+  }
+
+  const branches = {
+    middelburg: [-25.7751, 29.4648],
+    nelspruit: [-25.4753, 30.9694]
+  };
+
+  const map = L.map("branch-map");
+
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}', {
+  attribution: 'Tiles &copy; Esri'
+}).addTo(map);
+
+  const middelburgMarker = L.marker(branches.middelburg)
+    .addTo(map)
+    .bindPopup("Café Queene — Middelburg");
+
+  const nelspruitMarker = L.marker(branches.nelspruit)
+    .addTo(map)
+    .bindPopup("Café Queene — Nelspruit");
+
+  const allMarkers = L.featureGroup([
+    middelburgMarker,
+    nelspruitMarker
+  ]);
+
+  map.fitBounds(allMarkers.getBounds().pad(0.2));
+
+  document.querySelectorAll("[data-map-target]").forEach(function (button) {
+
+    button.addEventListener("click", function () {
+
+      const target = button.getAttribute("data-map-target");
+
+      if (target === "all") {
+        map.fitBounds(allMarkers.getBounds().pad(0.2));
+      }
+
+      if (target === "middelburg") {
+        map.setView(branches.middelburg, 14);
+        middelburgMarker.openPopup();
+      }
+
+      if (target === "nelspruit") {
+        map.setView(branches.nelspruit, 14);
+        nelspruitMarker.openPopup();
+      }
+
+    });
+
+  });
+
+  setTimeout(function () {
+    map.invalidateSize();
+  }, 300);
+
+});

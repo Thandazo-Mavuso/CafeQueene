@@ -33,7 +33,7 @@ CafeQueene/
 ├── js/
 │   └── main.js        (all JavaScript: mobile navigation, dynamic menu, forms)
 └── images/            (photos, favicon.svg and og-image.jpg for social sharing)
-    └── thumbs/        (small 600px copies used by the gallery for faster loading)
+    └── folder      (small 600px copies used by the gallery for faster loading)
 ```
 
 ## Design
