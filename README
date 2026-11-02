@@ -1,50 +1,289 @@
-# Café Queene Website
+# Café Queene — Website
 
-Student Information
-Full Name: Thandazo Queene Mavuso
-Student Number: ST10525438
-Module: Web Development
+A multi-page website for **Café Queene**, a coffee shop and kitchen with branches in **Middelburg** and **Nelspruit**, owned by Queene Mavuso. Built for the WEDE5020 Web Development (Introduction) POE.
 
+- **GitHub repository:** https://github.com/Thandazo-Mavuso/CafeQueene
+- **Live website:** _add the Netlify / GitHub Pages link here after deployment (Part 3)_
 
- Project Overview
-Café Queene is a modern coffee shop founded in 2025 by Queene Mavuso, offering specialty coffee alongside a full breakfast and lunch menu. This project involves designing and building a functional, visually appealing website for Café Queene using HTML, CSS, and JavaScript. The website introduces the brand, showcases the menu, and makes it easy for customers to find and contact the business. Café Queene operates from two branches, located in Middelburg and Nelspruit.
+## Pages
 
-Website Goals and Objectives
-- Introduce Café Queene as a new, modern coffee shop and build brand awareness online.
-- Clearly showcase the menu (coffee, breakfast, and lunch) and the café's atmosphere.
-- Make it easy for visitors to contact the café or find both branch locations.
-- Encourage visitors to become regular, returning customers.
+| Page | Purpose |
+|---|---|
+| `index.html` | Home: hero, highlights, story teaser, branches |
+| `about.html` | The Café Queene story, owner, photo gallery with lightbox and values |
+| `menu.html` | Full menu with prices, loaded by JavaScript with search, category filter and sort |
+| `enquiry.html` | FAQ accordion and a validated enquiry form, sent with AJAX, with an instant cost and availability response |
+| `contact.html` | Branch addresses, phone numbers, emails, opening hours, maps and a validated contact form that builds an email |
 
-## Key Features and Functionality
-- **Home page** – introduces the brand and atmosphere, with a hero image and call to action.
-- **About Us page** – tells the Café Queene story, mission, and vision.
-- **Menu page** – displays the full menu (coffee, breakfast, and lunch items).
-- **Enquiry page** – a form for visitors to ask questions or make bookings.
-- **Contact page** – shows both the Middelburg and Nelspruit branches on a map, along with a contact form and opening hours.
-- Consistent navigation menu across all pages for easy movement between sections.
+## Project structure
 
-Timeline and Milestones
-| Week | Activity |
-|------|----------|
-| Week 1 | Research, planning, and wireframing |
-| Week 2 | Building the HTML structure and adding content |
-| Week 3 | Styling and visual design |
-| Week 4 | Testing, refinement, and final submission |
+```
+CafeQueene/
+├── index.html
+├── about.html
+├── menu.html
+├── enquiry.html
+├── contact.html
+├── README.md
+├── robots.txt         (tells search engines what they may crawl)
+├── sitemap.xml        (lists every page for search engines)
+├── _headers           (security and caching headers, used by Netlify)
+├── css/
+│   └── style.css      (one shared stylesheet, CSS variables for the palette)
+├── js/
+│   └── main.js        (all JavaScript: mobile navigation, dynamic menu, forms)
+└── images/            (photos, favicon.svg and og-image.jpg for social sharing)
+    └── thumbs/        (small 600px copies used by the gallery for faster loading)
+```
 
-Part 1 Details
-Part 1 covers project initiation and planning: choosing a target organisation (Café Queene), writing the website project proposal, researching and gathering content, planning the sitemap and file/folder structure, and building the basic HTML structure for all five pages.
- 
-## Change log
- ### References
+## Design
 
-MDN Web Docs. 2025. *Your first website*. Available at: [https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+- **Palette (from the proposal):** terracotta `#c1502e` and `#a13f22`, cream `#fdf8f0` and `#f5ede1`, dark grey `#2e2e2e`.
+- **Fonts:** Zilla Slab for headings and Nunito Sans for body text (Google Fonts).
+- **Responsive breakpoints:** desktop (1025px and up), tablet (up to 1024px), phone (up to 600px) and a small-phone rule for about 320px. The navigation turns into a hamburger menu at 768px and below.
+- **Accessibility:** skip-to-content link, visible keyboard focus styles, labelled form fields, descriptive alt text, titles on map frames, and `aria-expanded` / `aria-controls` on the menu button.
 
-MDN Web Docs. 2025. *Web technology for developers*. Available at: [https://developer.mozilla.org/en-US/docs/Web](https://developer.mozilla.org/en-US/docs/Web?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+## Changelog
 
-MDN Web Docs. 2025. *What is JavaScript?* Available at: [https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Scripting/What_is_JavaScript?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+Newest entries first.
 
-Rosebank College. 2026. *Web Development Module Manual*. Rosebank College.
+### Part 3 — SEO, page speed and security (1 November 2026)
 
-OpenAI. 2026. *ChatGPT*. Available at: [https://chatgpt.com/](https://chatgpt.com/?utm_source=chatgpt.com) (Accessed: 16 September 2026).
+**On-page SEO**
+- Wrote a unique title tag (under 60 characters) and meta description (110 to 160 characters) for every page, using the keywords in the table below.
+- Fixed the heading structure: one `<h1>` per page and no skipped levels. The home page jumped from `<h1>` to `<h3>`, so a hidden "Menu highlights" heading was added and the "More than just a café" and "What We Stand For" labels became real `<h2>` headings. The footer headings changed from `<h4>` to `<h2>`.
+- Added a keyword line above the home page heading ("Coffee shop & kitchen in Middelburg & Nelspruit").
+- Image optimisation: descriptive file names (for example `menu-signature-breakfast.jpg`), alt text on every image, and `width` and `height` on every image so the page does not jump while loading.
+- Added links between pages inside the text (About to Menu and Enquiry, Menu to Enquiry and Contact, Contact to Enquiry, Enquiry to Menu).
+- Page addresses stay short and descriptive (`/menu.html`, `/contact.html`), with a `canonical` link on every page.
+- Added Open Graph and Twitter card tags and a 1200 by 630 share image, so links look good on WhatsApp, Facebook and X.
+- Added structured data (JSON-LD): an Organization and WebSite entry on the home page, and a `CafeOrCoffeeShop` entry for each branch on the contact page, with address, phone, opening hours and map position, so search engines can show them in local results.
+- Changed the page language to `en-ZA`, added a favicon and a theme colour.
 
-Part 2 of POE
+**Additional requests**
+- Created `robots.txt` and `sitemap.xml` (all five pages).
+- Page speed (see the table below): resized and compressed 22 photos to the size they are shown at, made small thumbnails for the gallery, lazy-loaded images below the screen, gave the home photo `fetchpriority="high"`, loaded all scripts with `defer`, removed two heavy Google Maps iframes, and added caching rules in `_headers`.
+- Security (see the list below): a Content Security Policy on every page, referrer policy, integrity hashes on the Leaflet files, a spam trap on both forms, and removal of every inline style and script.
+
+### Part 3 — Interactive elements and animations (1 November 2026)
+
+All of this JavaScript is in `js/main.js` (sections 5 to 8) and the styling is in `css/style.css`.
+
+- **Interactive map (`contact.html`):** replaced the two Google Maps iframes with one Leaflet map (version 1.9.4, loaded from a CDN with integrity hashes) using OpenStreetMap tiles. Both branches have markers with popups showing the name, address and hours, and three buttons (Both branches, Middelburg, Nelspruit) fly the map to the chosen place. The popups are built with DOM methods, not HTML strings. If the library fails to load, a message appears and each branch card still has an "Open in Google Maps" link. The marker positions are approximate town-centre coordinates.
+- **FAQ accordion (`enquiry.html`):** five questions, each a `<button>` with `aria-expanded` and `aria-controls`. Only one answer is open at a time, and the arrow, Home and End keys move between questions.
+- **Photo gallery with lightbox (`about.html`):** eight photos in a responsive grid. Clicking one opens a larger version in a `<dialog>` element with previous and next buttons, arrow-key navigation, a caption with the photo number, and the Escape key or the close button to leave. Focus returns to the thumbnail that was clicked. Thumbnails in `images/thumbs/` are small copies (about 356 KB for all eight) so the page loads faster.
+- **Animations:** cards and sections fade in as they scroll into view (`IntersectionObserver` with a short stagger), cards lift slightly on hover, the accordion panels slide in, and gallery photos zoom a little on hover. All animation is switched off for people who set "reduce motion" on their device.
+- **Back-to-top button:** created with JavaScript (`createElement`), shown after scrolling down 600px, and scrolls smoothly to the top.
+- **Advanced DOM manipulation:** creating elements, adding classes, setting attributes, listening to scroll and keyboard events and moving focus, used across the map, accordion, lightbox, menu and form code.
+- Removed the Google Maps iframes, which also reduces page weight.
+
+### Part 3 — JavaScript merged into one file (1 November 2026)
+
+- Combined `js/menu.js` and `js/forms.js` into `js/main.js`, so the site has one stylesheet and one script, and every page now loads only `js/main.js`.
+- `main.js` is split into numbered sections (start-up, mobile navigation, dynamic menu, forms). One `DOMContentLoaded` block calls `initMobileNav()`, `initMenu()` and `initForms()`. Each of these first checks that its page's elements exist, so the menu and form code does nothing on pages that don't use it.
+- Removed the extra `<script>` tags from `menu.html`, `enquiry.html` and `contact.html` and deleted `menu.js` and `forms.js`.
+- All features were tested again after the merge (navigation on all five pages, menu search, filter and sort, enquiry and contact forms) with no JavaScript errors.
+
+### Part 3 — Forms, validation and AJAX (1 November 2026)
+
+- Created the forms script (now merged into `js/main.js`), shared by both forms. Each field names its rule in a `data-rule` attribute (name, email, phone, select, date, guests, message) and the script checks it.
+- **Client-side validation:** names (2 to 60 letters), email format, South African phone numbers (`082 123 4567` or `+27 82 123 4567`), dates that are not in the past and within 12 months, guests from 1 to 50, and messages of 10 to 500 characters. HTML5 attributes (`required`, `type="email"`, `type="date"`, `min`, `max`, `maxlength`) are also on the fields.
+- **Error handling:** every field has its own error message under it (`role="alert"`), the field gets `aria-invalid="true"`, and the first invalid field receives focus. Fields are checked when the user leaves them and re-checked while typing. A live character counter shows the message length.
+- **enquiry.html:** added phone, enquiry type, preferred date and number of guests. After a valid submit the page shows an instant response with the estimated cost, availability for the chosen date (using the branch opening hours) and what happens next. Date and guests become optional for general questions.
+- **AJAX submission:** the enquiry is sent with `fetch()` as a POST request, so the page does not reload. While sending, the button is disabled and shows "Sending…". If the request fails, an error message with both phone numbers is shown and the form stays filled in.
+- **contact.html:** this page had no form, so a new one was added (name, email, optional phone, type of message, branch, message). After validation the page builds the email (To, Subject and Message), shows a preview, and offers an "Open in my email app" button using a `mailto:` link addressed to the chosen branch. The form's `action` is a `mailto:` address as a fallback.
+- **Security:** both forms contain a hidden spam-trap field. The scripts write user text with `textContent`, never `innerHTML`, so typed text cannot inject HTML.
+- Problem found: the old enquiry form used `action="#"`, so submitting only reloaded the page. It now has a real action.
+- **Note:** until a real Formspree form ID replaces `YOUR_FORM_ID` in the form's action, the enquiry runs in demo mode (validated, response shown, nothing sent).
+
+### Part 3 — Dynamic menu with search, filter and sort (30 October 2026)
+
+- Created the menu script (now merged into `js/main.js`). The 22 menu items (name, description, price, category) now live in a JavaScript array and are built onto the page with DOM methods (`createElement`, `appendChild`, `textContent`) instead of being typed into the HTML.
+- Added a search box that filters items by name or description as the user types (not case sensitive).
+- Added category filter buttons (All, Coffee & Drinks, Breakfast, Lunch, Fast Food, Snacks & Sweets) that use `aria-pressed` to show the active filter.
+- Added a sort menu: menu order, price low to high, price high to low, and name A to Z.
+- Added a result count that screen readers announce (`aria-live="polite"`), an empty-state message with a "Clear search and filters" button, and a `<noscript>` message.
+- The large section photos are hidden while the user is searching so the results stay compact.
+- Rebuilt `menu.html` with CSS classes (`.menu-section`, `.menu-item`, `.filter-btn` and others) instead of inline styles, which also removed about 150 lines of repeated inline CSS.
+
+### Part 3 — Feedback corrections (30 October 2026)
+
+Part 2 was marked 84/100. The lecturer's feedback listed six priority improvements. Each one is addressed below.
+
+**Feedback 1 — Complete the mobile navigation**
+- Added a hamburger `<button class="nav__toggle">` to all five pages, with `aria-controls="primary-nav"`, `aria-expanded` and an `aria-label` that changes between "Open" and "Close".
+- Wrote the `.nav__toggle` and `.nav__links.is-open` CSS. At 768px and below the links collapse into a vertical list that opens under the logo, and the three bars animate into an X.
+- Created `js/main.js` to toggle the `is-open` class, keep `aria-expanded` in sync, close the menu with the Escape key, and reset the menu if the window is widened.
+- Problem found: the old nav had a `.nav__toggle { display: none; }` rule but no button and no script, so phones just showed the full desktop links.
+
+**Feedback 2 — Strengthen responsive design**
+- Replaced the single 968px breakpoint with separate tablet (1024px), tablet-portrait (768px), phone (600px) and small-phone (360px) breakpoints.
+- Adjusted navigation, section spacing, logo and heading sizes, buttons (full width on phones), cards, form padding and map height (250px down to 220px).
+- Problem found: the contact page used inline `grid-template-columns: repeat(2, 1fr)`, which overrode the stylesheet, so the two branch cards never stacked on phones. Moving it into the stylesheet fixed this.
+- Problem found: the About page had a 3-item values list inside a 4-column grid. Added a `.features__grid--three` modifier.
+
+**Feedback 5 — Improve interaction accessibility**
+- Added `:focus-visible` outlines for links, buttons, inputs, selects and textareas, plus a lighter outline on the dark footer.
+- Added a "Skip to main content" link at the top of every page, and `id="main"` on each `<main>`.
+- Removed the inline styles from `contact.html` and `enquiry.html` and moved them into named classes (`.form-card`, `.form-group`, `.form-control`, `.branch-card--detailed`, `.map-embed`, `.page-intro` and others).
+- Branch headings on the contact page changed from `h3` to `h2` so the heading order is h1 → h2.
+- Added `title` attributes to both map iframes and `autocomplete` attributes to the enquiry form fields.
+
+**Other corrections found while editing**
+- `.text-center` was used on several pages but never defined in the stylesheet, so some eyebrow labels were left-aligned. Added the rule.
+- The About page showed literal `**Middelburg**` asterisks. Replaced them with `<strong>` tags.
+
+**Feedback 3 — Complete the changelog:** this section and the entries below.
+**Feedback 4 — Improve Git history:** changes were committed in several small commits with descriptive messages (see the repository history).
+**Feedback 6 — Document testing:** see the Testing section below.
+
+### Part 2 and earlier
+
+_Fill in the real dates from your own records. Keep the entries separate, as the lecturer asked._
+
+**[add date] — Planning**
+- Wrote the project proposal, chose the five pages (Home, About Us, Menu, Enquiry, Contact) and the terracotta, cream and dark grey palette.
+
+**[add date] — HTML development**
+- Built the HTML structure and content for all five pages using semantic elements (`header`, `nav`, `main`, `section`, `article`, `footer`).
+- Added the enquiry form and the branch details with Google Maps embeds on the contact page.
+
+**[add date] — CSS development**
+- Created `css/style.css` with CSS variables, a centred header and navigation, hero, cards, forms and footer.
+
+**[add date] — Images and menu**
+- Added photos to the Home and About pages and rebuilt the menu as a priced list with one highlight photo per section.
+
+**17 September 2026 — Part 2 submitted**
+
+## Testing
+
+Update the **Result** column after each test on your own machine. Rows marked ✔ were checked on 30 October 2026.
+
+### Screen sizes
+
+| Width | Pages | Check | Result |
+|---|---|---|---|
+| 320px | all five | No horizontal scrolling; hamburger menu opens and closes | ✔ Pass (headless Chromium) |
+| 768px | all five | No horizontal scrolling; hamburger menu opens and closes | ✔ Pass (headless Chromium) |
+| 1440px | all five | Full desktop navigation shown, no hamburger | ✔ Pass (headless Chromium) |
+
+### Browsers
+
+| Browser | Version | Result |
+|---|---|---|
+| Google Chrome | _add version_ | _Pass / Fail_ |
+| Microsoft Edge | _add version_ | _Pass / Fail_ |
+| Firefox | _add version_ | _Pass / Fail_ |
+| Phone browser (Android or iPhone) | _add device_ | _Pass / Fail_ |
+
+### Functional tests
+
+| Test | Method | Result |
+|---|---|---|
+| Link testing | Every local `href` and `src` in all five pages points to a file that exists | ✔ Pass, no missing files |
+| Navigation | Home, About Us, Menu, Enquiry and Contact links work from every page; the current page is highlighted | _Pass / Fail_ |
+| Image testing | All 7 images used on the pages load (no broken images) | ✔ Pass |
+| Keyboard testing | First Tab press lands on the skip link; every link, button and field shows a visible outline | ✔ Skip link; _confirm outlines by hand_ |
+| Interactive map | Both markers appear, each button moves the map and opens the right popup; with the library blocked the fallback message shows | ✔ Pass (headless Chromium, map tiles supplied by a test stub); _check the real map tiles in your own browser_ |
+| FAQ accordion | Opens and closes by mouse and keyboard, only one open at a time, arrow keys move between questions | ✔ Pass |
+| Gallery and lightbox | Opens on the clicked photo, previous and next wrap around, arrow keys work, Escape and the close button close it, focus returns to the thumbnail | ✔ Pass |
+| Animations | Cards fade in when scrolled to, back-to-top button appears and works, nothing animates when "reduce motion" is on | ✔ Pass |
+| SEO audit | Titles at most 60 characters, descriptions 110 to 160, one `<h1>` and no skipped heading levels, alt text and sizes on all images, canonical, Open Graph and structured data present, sitemap and robots.txt correct | ✔ Pass on all five pages |
+| Security policy | Every page and feature (map, forms, gallery, menu) still works with the policy on, and an injected script and an outside image are blocked | ✔ Pass |
+| Images after compression | All images load, all 8 gallery photos open in the lightbox | ✔ Pass |
+| Menu search, filter and sort | Search "pancake" (2 results), "zzzz" (empty message), each category button, and all four sort options | ✔ Pass (headless Chromium); _repeat in your own browser_ |
+| Enquiry form: empty submit | Click Submit Enquiry with nothing filled in | ✔ Pass: an error appears under each required field and focus moves to the name field (headless Chromium) |
+| Enquiry form: wrong formats | Name "J0hn123", email "bad@", phone "12345", a past date, 80 guests, a 5-letter message | ✔ Pass: each field shows its own error message |
+| Enquiry form: phone formats | `082 123 4567`, `0821234567`, `+27 82 123 4567`, `082-123-4567` accepted; `0121234567x` rejected | ✔ Pass |
+| Enquiry form: valid submit | Fill in each enquiry type | ✔ Pass: the response shows the right cost and availability for study, group, event, catering and general |
+| Enquiry form: AJAX | Submit with a mocked server, then with a failing server | ✔ Pass: POST sent without reloading; an error message appears on failure and the form keeps its data |
+| Contact form | Empty submit, bad optional phone, then a valid message to each branch | ✔ Pass: the email preview shows the correct recipient, subject and message, and the mailto link opens with them |
+| Forms in your own browser | Repeat the form tests above in Chrome, Edge and on a phone | _Pass / Fail_ |
+| Responsive visual check | Look at each page at 320px, 768px and 1440px using browser developer tools (F12, then the device toolbar) | _Pass / Fail_ |
+
+## SEO
+
+### Keyword research
+
+The keywords were chosen by thinking about what a student, young professional or remote worker in each town would type into Google, then placed in the titles, descriptions, headings and page text. **Before submitting, check each one yourself:** type it into Google and note whether the autocomplete suggests it, and look at "People also ask". Record what you find in the last column.
+
+| Page | Main keywords | Where they appear | Checked in Google autocomplete |
+|---|---|---|---|
+| Home | coffee shop Middelburg, coffee shop Nelspruit, café Mbombela | Title, description, keyword line above the heading, intro text | _add result_ |
+| About | work-friendly café, study café Nelspruit, café with Wi-Fi Middelburg | Title, description, story text | _add result_ |
+| Menu | café menu prices, breakfast Nelspruit, coffee and lunch menu | Title, description, section headings | _add result_ |
+| Enquiry | group booking café, catering Nelspruit, private event venue Middelburg | Title, description, form options, FAQ | _add result_ |
+| Contact | café opening hours Nelspruit, café Middelburg address | Title, description, structured data, branch details | _add result_ |
+
+Both "Nelspruit" and "Mbombela" are used because people search for either name.
+
+### On-page SEO checklist
+
+| Item | What was done | Done |
+|---|---|---|
+| Keyword research | Table above | ✔ |
+| Title tags and meta descriptions | Unique on all five pages, within the recommended lengths | ✔ |
+| Header tags | One `<h1>` per page, no skipped levels | ✔ |
+| Image optimisation | Descriptive file names, alt text, width and height, compressed | ✔ |
+| URL structure | Short, descriptive file names with a canonical link | ✔ |
+| Internal linking | Text links between related pages and a shared navigation and footer | ✔ |
+| Mobile-friendliness | Responsive layout, viewport tag, hamburger menu | ✔ |
+
+### Off-page SEO plan
+
+These are actions for after the site is live. They are a plan, not something already done.
+
+- **Backlinks:** list both branches in South African business directories (such as Yellow Pages), ask local community pages and food bloggers in Middelburg and Mbombela to feature the café, and approach nearby colleges for a student-discount partnership page that links to the website.
+- **Social media:** create Facebook and Instagram pages for Café Queene using the same name, address and phone numbers as the website, add the website link to each profile, and post menu photos weekly. The Open Graph tags make shared links show a photo and a title.
+- **Local SEO:** claim a free Google Business Profile for each branch with the same address, phone number and opening hours as the contact page, add photos, and ask regular customers to leave reviews. The structured data on the contact page supports this.
+
+### Additional requests
+
+| Item | What was done |
+|---|---|
+| `robots.txt` | Allows all crawlers and points to the sitemap |
+| `sitemap.xml` | Lists all five pages with a last-changed date |
+| Page speed | See the table below |
+| Security | See the list below |
+
+**Before going live:** every page, `sitemap.xml` and `robots.txt` contain the placeholder `https://YOUR-SITE-URL/`. After deployment, use Find and Replace across all files in VS Code (Ctrl+Shift+H) to change it to the real address, for example `https://cafequeene.netlify.app/`, and commit the change.
+
+### Page speed
+
+First-load download size measured on a local copy (HTML, CSS, JavaScript and images; Google Fonts and map tiles are not included):
+
+| Page | Before | After |
+|---|---|---|
+| Home | 176 KB | 165 KB |
+| About | 639 KB | 619 KB |
+| Menu | 667 KB | 461 KB |
+| Enquiry | 76 KB | 76 KB |
+| Contact | 79 KB | 79 KB |
+
+_After deployment, run Google Lighthouse (Chrome: F12, then the Lighthouse tab) on each page and record the Performance, Accessibility, Best Practices and SEO scores here._
+
+### Security
+
+- A Content Security Policy on every page that only allows the scripts, styles, images and connections the site needs (and nothing else), plus a referrer policy. Tested: an injected script and an image from an unknown site were both blocked.
+- Integrity hashes on the Leaflet files, so a changed copy on the CDN would be refused.
+- No inline styles or inline scripts anywhere in the pages.
+- Visitor text is written to the page with `textContent`, never `innerHTML`, so typed text cannot inject code.
+- Both forms validate input and contain a hidden spam trap; external links use `rel="noopener noreferrer"`.
+- `_headers` adds `X-Frame-Options`, `X-Content-Type-Options` and a permissions policy on Netlify. GitHub Pages ignores this file, so it relies on the security policy inside each page there.
+- HTTPS is provided automatically by Netlify and GitHub Pages.
+
+## Part 3 progress
+
+- [x] Feedback corrections from Part 2
+- [x] Interactive elements (Leaflet map, FAQ accordion, lightbox gallery, animations)
+- [x] Dynamic menu with search, filter and sort
+- [x] SEO (keywords, meta tags, robots.txt, sitemap.xml, off-page plan, page speed, security)
+- [x] Form validation and AJAX on the enquiry and contact forms
+- [x] Deployment on Netlify or GitHub Pages
+
+## References
+
+Agafonkin, V., 2023. *Leaflet: an open-source JavaScript library for interactive maps*. Version 1.9.4. [Online]. Available at: https://leafletjs.com/ [Accessed 1 November 2026].
+
+OpenStreetMap contributors, 2026. *OpenStreetMap*. [Online]. Available at: https://www.openstreetmap.org/copyright [Accessed 1 November 2026].

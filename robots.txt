@@ -1,0 +1,5 @@
+# Café Queene — instructions for search engine crawlers
+User-agent: *
+Allow: /
+
+Sitemap: https://YOUR-SITE-URL/sitemap.xml

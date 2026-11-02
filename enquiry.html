@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://formspree.io; form-action 'self' https://formspree.io; base-uri 'self'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enquiry | Café Queene — Middelburg &amp; Nelspruit</title>
-  <meta name="description" content="Send an enquiry or book a space at Café Queene in Middelburg or Nelspruit." />
+  <title>Enquiries &amp; Bookings | Café Queene Middelburg &amp; Nelspruit</title>
+  <meta name="description" content="Ask Café Queene about study tables, group bookings, private events or catering in Middelburg and Nelspruit, and get an instant cost estimate." />
+  <link rel="canonical" href="https://YOUR-SITE-URL/enquiry.html" />
+  <meta name="theme-color" content="#c1502e" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph and Twitter cards (how the page looks when shared) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Café Queene" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:title" content="Enquiries &amp; Bookings | Café Queene Middelburg &amp; Nelspruit" />
+  <meta property="og:description" content="Ask Café Queene about study tables, group bookings, private events or catering in Middelburg and Nelspruit, and get an instant cost estimate." />
+  <meta property="og:url" content="https://YOUR-SITE-URL/enquiry.html" />
+  <meta property="og:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A Café Queene branded latte with heart-shaped foam art, coffee beans and a croissant" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Enquiries &amp; Bookings | Café Queene Middelburg &amp; Nelspruit" />
+  <meta name="twitter:description" content="Ask Café Queene about study tables, group bookings, private events or catering in Middelburg and Nelspruit, and get an instant cost estimate." />
+  <meta name="twitter:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +34,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
@@ -24,6 +47,12 @@
         <a href="index.html" class="nav__logo">Café <span>Queene</span></a>
       </div>
 
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
       <ul class="nav__links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -34,52 +63,177 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- PAGE HEADER -->
     <section class="section">
       <div class="container text-center">
         <p class="eyebrow">Get in Touch</p>
         <h1 class="section-title">Send us an Enquiry</h1>
-        <p style="color: var(--color-text-muted); max-width: 600px; margin: -1.5rem auto 0;">
-          Planning a study session, a group get-together, or have a question for our team? Fill out the form below.
+        <p class="page-intro">
+          Planning a study session, a group get-together, or have a question for our team? Fill out the form below, or browse our <a href="menu.html">menu</a> first.
         </p>
       </div>
     </section>
 
+    <!-- FAQ ACCORDION -->
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="form-card">
+          <h2 class="faq-title">Quick answers</h2>
+          <div class="accordion">
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button type="button" class="accordion__trigger" id="faq-trigger-1" aria-expanded="false" aria-controls="faq-panel-1">
+                <span>Do you have Wi-Fi, and can I study here all day?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-panel-1" role="region" aria-labelledby="faq-trigger-1" hidden>
+              <p>Yes, both branches are set up for students and remote workers. Grab a table, plug in and stay as long as you like. We simply ask that you order something every couple of hours.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button type="button" class="accordion__trigger" id="faq-trigger-2" aria-expanded="false" aria-controls="faq-panel-2">
+                <span>Do I need to book a table?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-panel-2" role="region" aria-labelledby="faq-trigger-2" hidden>
+              <p>Not for study or work tables, just walk in. For groups, private events or catering, please use the form below so we can confirm a date with you.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button type="button" class="accordion__trigger" id="faq-trigger-3" aria-expanded="false" aria-controls="faq-panel-3">
+                <span>What are your opening hours?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-panel-3" role="region" aria-labelledby="faq-trigger-3" hidden>
+              <p>Both branches are open Monday to Saturday from 7:00 AM to 6:00 PM, and on Sundays from 8:00 AM to 4:00 PM.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button type="button" class="accordion__trigger" id="faq-trigger-4" aria-expanded="false" aria-controls="faq-panel-4">
+                <span>Can I enquire about catering or a private event?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-panel-4" role="region" aria-labelledby="faq-trigger-4" hidden>
+              <p>Yes. Choose "Catering" or "Private event" as the type of enquiry below and tell us the date and number of guests. You will get an estimated cost straight away, and we will confirm by email.</p>
+            </div>
+          </div>
+          <div class="accordion__item">
+            <h3 class="accordion__heading">
+              <button type="button" class="accordion__trigger" id="faq-trigger-5" aria-expanded="false" aria-controls="faq-panel-5">
+                <span>I have an allergy or dietary need. Can you help?</span>
+                <span class="accordion__icon" aria-hidden="true"></span>
+              </button>
+            </h3>
+            <div class="accordion__panel" id="faq-panel-5" role="region" aria-labelledby="faq-trigger-5" hidden>
+              <p>Please tell us when you order, or mention it in your enquiry, and our team will let you know what we can do. We prepare food fresh daily, so we can usually talk through the ingredients with you.</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ENQUIRY FORM SECTION -->
-    <section class="section" style="padding-top: 0;">
-      <div class="container" style="max-width: 700px;">
-        <div style="background-color: var(--color-surface); padding: 3rem; border-radius: var(--radius); border: 1px solid var(--color-border);">
-          
-          <form action="#" method="POST" style="display: flex; flex-direction: column; gap: 1.5rem;">
-            
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <label for="name" style="font-weight: 600; font-size: 0.95rem;">Your Name</label>
-              <input type="text" id="name" name="name" required placeholder="e.g. Queene Mavuso" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
+    <section class="section section--flush-top">
+      <div class="container">
+        <div class="form-card">
+
+          <h2 class="visually-hidden">Send your enquiry</h2>
+          <form class="form" id="enquiry-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+
+            <p class="form-note">Fields marked <span class="req">*</span> are required.</p>
+
+            <div class="form-group">
+              <label for="name">Your name <span class="req">*</span></label>
+              <input class="form-control" type="text" id="name" name="name" data-rule="name" autocomplete="name" maxlength="60" required placeholder="e.g. Queene Mavuso" aria-describedby="name-error">
+              <p class="form-error" id="name-error" role="alert"></p>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <label for="email" style="font-weight: 600; font-size: 0.95rem;">Email Address</label>
-              <input type="email" id="email" name="email" required placeholder="e.g. name@example.com" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="email">Email address <span class="req">*</span></label>
+                <input class="form-control" type="email" id="email" name="email" data-rule="email" autocomplete="email" required placeholder="e.g. name@example.com" aria-describedby="email-error">
+                <p class="form-error" id="email-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Phone number <span class="req">*</span></label>
+                <input class="form-control" type="tel" id="phone" name="phone" data-rule="phone" autocomplete="tel" required placeholder="e.g. 082 123 4567" aria-describedby="phone-hint phone-error">
+                <p class="form-hint" id="phone-hint">South African number, with or without +27.</p>
+                <p class="form-error" id="phone-error" role="alert"></p>
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <label for="branch" style="font-weight: 600; font-size: 0.95rem;">Select Branch</label>
-              <select id="branch" name="branch" style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text);">
-                <option value="middelburg">Middelburg Branch (28 Joubert St)</option>
-                <option value="nelspruit">Nelspruit Branch (41 Ferreira St)</option>
-              </select>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="enquiry-type">Type of enquiry <span class="req">*</span></label>
+                <select class="form-control" id="enquiry-type" name="enquiry_type" data-rule="select" required aria-describedby="enquiry-type-error">
+                  <option value="">Choose an enquiry type</option>
+                  <option value="study">Study or work table</option>
+                  <option value="group">Group booking</option>
+                  <option value="event">Private event</option>
+                  <option value="catering">Catering</option>
+                  <option value="general">General question</option>
+                </select>
+                <p class="form-error" id="enquiry-type-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="branch">Branch</label>
+                <select class="form-control" id="branch" name="branch">
+                  <option value="middelburg">Middelburg Branch (28 Joubert St)</option>
+                  <option value="nelspruit">Nelspruit Branch (41 Ferreira St)</option>
+                </select>
+              </div>
             </div>
 
-            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
-              <label for="message" style="font-weight: 600; font-size: 0.95rem;">Your Message / Enquiry</label>
-              <textarea id="message" name="message" rows="5" required placeholder="Tell us what you need..." style="padding: 0.85rem 1rem; border-radius: var(--radius); border: 1px solid var(--color-border); background-color: var(--color-bg); font-family: var(--font-sans); font-size: 1rem; color: var(--color-text); resize: vertical;"></textarea>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="date">Preferred date <span class="optional-tag">(optional for general questions)</span></label>
+                <input class="form-control" type="date" id="date" name="date" data-rule="date" aria-describedby="date-error">
+                <p class="form-error" id="date-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="guests">Number of guests <span class="optional-tag">(optional for general questions)</span></label>
+                <input class="form-control" type="number" id="guests" name="guests" data-rule="guests" min="1" max="50" inputmode="numeric" placeholder="e.g. 6" aria-describedby="guests-error">
+                <p class="form-error" id="guests-error" role="alert"></p>
+              </div>
             </div>
 
-            <button type="submit" class="btn btn--primary" style="width: 100%; border: none; margin-top: 0.5rem; cursor: pointer;">Submit Enquiry</button>
+            <div class="form-group">
+              <label for="message">Your message <span class="req">*</span></label>
+              <textarea class="form-control" id="message" name="message" data-rule="message" rows="5" maxlength="500" required placeholder="Tell us what you need..." aria-describedby="message-count message-error"></textarea>
+              <p class="form-hint" id="message-count">0 / 500 characters</p>
+              <p class="form-error" id="message-error" role="alert"></p>
+            </div>
+
+            <!-- Spam trap: hidden from real visitors -->
+            <div class="form-hp" aria-hidden="true">
+              <label for="website">Leave this field empty</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <p class="form-error form-error--general" id="form-error" role="alert"></p>
+
+            <button type="submit" class="btn btn--primary btn--block">Submit Enquiry</button>
 
           </form>
+
+          <!-- Instant response, shown after a valid submission -->
+          <div class="form-result" id="enquiry-result" tabindex="-1" role="status" hidden>
+            <div id="enquiry-result-body"></div>
+            <button type="button" class="btn btn--ghost" id="enquiry-again">Send another enquiry</button>
+          </div>
 
         </div>
       </div>
@@ -90,11 +244,11 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h4>Café Queene</h4>
+        <h2>Café Queene</h2>
         <p>Good coffee and good food in Middelburg and Nelspruit. Come as you are, stay as long as you like.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2>Explore</h2>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Menu</a></li>
@@ -102,7 +256,7 @@
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2>Visit</h2>
         <ul>
           <li><a href="contact.html">Middelburg Branch</a></li>
           <li><a href="contact.html">Nelspruit Branch</a></li>
@@ -114,6 +268,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

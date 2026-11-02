@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'none'; form-action 'self'; base-uri 'self'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Menu | Café Queene — Middelburg &amp; Nelspruit</title>
-  <meta name="description" content="Explore the Café Queene menu featuring quality coffee, all-day breakfast plates, fresh lunches, fast food, and snacks in Middelburg and Nelspruit." />
+  <title>Menu &amp; Prices | Café Queene Coffee, Breakfast &amp; Lunch</title>
+  <meta name="description" content="See the full Café Queene menu with prices: coffee, all-day breakfast, lunch, fast food and sweet treats at our Middelburg and Nelspruit coffee shops." />
+  <link rel="canonical" href="https://YOUR-SITE-URL/menu.html" />
+  <meta name="theme-color" content="#c1502e" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+
+  <!-- Open Graph and Twitter cards (how the page looks when shared) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Café Queene" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:title" content="Menu &amp; Prices | Café Queene Coffee, Breakfast &amp; Lunch" />
+  <meta property="og:description" content="See the full Café Queene menu with prices: coffee, all-day breakfast, lunch, fast food and sweet treats at our Middelburg and Nelspruit coffee shops." />
+  <meta property="og:url" content="https://YOUR-SITE-URL/menu.html" />
+  <meta property="og:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A Café Queene branded latte with heart-shaped foam art, coffee beans and a croissant" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Menu &amp; Prices | Café Queene Coffee, Breakfast &amp; Lunch" />
+  <meta name="twitter:description" content="See the full Café Queene menu with prices: coffee, all-day breakfast, lunch, fast food and sweet treats at our Middelburg and Nelspruit coffee shops." />
+  <meta name="twitter:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +34,8 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
@@ -24,6 +47,12 @@
         <a href="index.html" class="nav__logo">Café <span>Queene</span></a>
       </div>
 
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
       <ul class="nav__links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -34,226 +63,104 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- PAGE HEADER -->
     <section class="section">
       <div class="container text-center">
         <p class="eyebrow">Our Offerings</p>
         <h1 class="section-title">Coffee, breakfast, and lunch — done properly.</h1>
-        <p style="color: var(--color-text-muted); max-width: 600px; margin: -1.5rem auto 0;">
+        <p class="page-intro">
           Prepared fresh daily using quality ingredients. Come hungry, stay a while.
         </p>
       </div>
     </section>
 
-    <!-- MENU SECTIONS -->
-    <section class="section features" style="padding-top: 2rem;">
+    <!-- SEARCH, FILTER AND SORT -->
+    <section class="container menu-controls-wrap">
+      <div class="menu-controls" role="search" aria-label="Search the menu">
+        <div class="form-group">
+          <label for="menu-search">Search the menu</label>
+          <input class="form-control" type="search" id="menu-search" placeholder="e.g. pancakes, avocado, latte" autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="menu-sort">Sort by</label>
+          <select class="form-control" id="menu-sort">
+            <option value="menu">Menu order</option>
+            <option value="price-low">Price: low to high</option>
+            <option value="price-high">Price: high to low</option>
+            <option value="name">Name: A to Z</option>
+          </select>
+        </div>
+
+        <div class="menu-filters" role="group" aria-label="Filter by category">
+          <button type="button" class="filter-btn" data-category="all" aria-pressed="true">All</button>
+          <button type="button" class="filter-btn" data-category="coffee" aria-pressed="false">Coffee &amp; Drinks</button>
+          <button type="button" class="filter-btn" data-category="breakfast" aria-pressed="false">Breakfast</button>
+          <button type="button" class="filter-btn" data-category="lunch" aria-pressed="false">Lunch</button>
+          <button type="button" class="filter-btn" data-category="fast-food" aria-pressed="false">Fast Food</button>
+          <button type="button" class="filter-btn" data-category="snacks" aria-pressed="false">Snacks &amp; Sweets</button>
+        </div>
+      </div>
+
+      <p class="menu-status" id="menu-status" aria-live="polite"></p>
+    </section>
+
+    <!-- MENU SECTIONS (filled in by js/menu.js) -->
+    <section class="section features section--tight-top">
       <div class="container">
 
-        <!-- COFFEE -->
-        <div style="margin-bottom: 4rem;">
-          <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; color: var(--color-primary-dark);">Coffee &amp; Drinks</h2>
-          <div class="hero__photo-frame" style="height: auto; background-color: transparent; border: none; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <img src="images/menu-coffee-hero.jpg" alt="A Café Queene branded latte with heart-shaped foam art, coffee beans, and a croissant on a wooden table" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); display: block;">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Espresso / Americano</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Rich, smooth and robust everyday house blend.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R30</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Flat White / Cappuccino</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Double shot espresso with micro-foamed textured milk.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R38</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Café Latte</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Smooth espresso poured over steamed milk with a light foam top.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R42</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Hot Chocolate / Chai Latte</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Rich artisanal cocoa or spiced comforting tea blend.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R45</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Iced Coffee</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Chilled espresso over ice with fresh milk — smooth and refreshing.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R42</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Fresh Orange Juice</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Freshly squeezed orange juice, made to order.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R35</span>
-            </div>
-          </div>
+        <noscript>
+          <p class="menu-empty">The menu loads with JavaScript. Please turn JavaScript on, or contact us for a copy of the menu.</p>
+        </noscript>
+
+        <div class="menu-empty" id="menu-empty" hidden>
+          <p>No menu items match your search.</p>
+          <button type="button" class="btn btn--ghost" id="menu-clear">Clear search and filters</button>
         </div>
 
-        <!-- BREAKFAST -->
-        <div style="margin-bottom: 4rem;">
-          <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; color: var(--color-primary-dark);">All-Day Breakfast</h2>
-          <div class="hero__photo-frame" style="height: auto; background-color: transparent; border: none; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <img src="images/menu-signature-breakfast.jpg" alt="Two fried eggs, bacon, and grilled toast served with ketchup and butter" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); display: block;">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Queene's Signature Breakfast</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Two eggs your way, sourdough toast, bacon, grilled mushrooms, and artisanal pork sausage.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R95</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Avocado &amp; Feta Toast</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Smashed seasonal avo, crumbled feta, lemon drizzle, and toasted seeds on thick sourdough.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R75</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Garden Avocado Toast</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Smashed avocado on grilled toast with sprouts, mixed seeds, and fresh basil.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R70</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Croissant &amp; Preserves</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Freshly baked buttery flaky croissant served with butter and local berry jam.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R45</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Granola &amp; Yogurt Bowl</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">House-baked toasted honey granola, double-cream Greek yogurt, and fresh seasonal berries.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R65</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Fluffy Pancake Stack</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Three stacked buttermilk pancakes with maple syrup, whipped cream, and fresh berries.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R70</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Berry Pancake Stack</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Fluffy pancakes dusted with icing sugar, topped with fresh blueberries and raspberries.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R75</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Classic French Toast</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Thick-cut brioche dipped and pan-fried golden, dusted with icing sugar, banana and berries.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R70</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Petite French Toast</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">A smaller, golden-fried French toast with butter and maple syrup — perfect with a coffee.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R55</span>
-            </div>
-          </div>
+        <div class="menu-section" data-category="coffee">
+          <h2 class="menu-section__title">Coffee &amp; Drinks</h2>
+          <figure class="menu-photo">
+            <img src="images/menu-coffee-hero.jpg" alt="A Café Queene branded latte with heart-shaped foam art, coffee beans, and a croissant on a wooden table" loading="lazy" width="1000" height="750" decoding="async">
+          </figure>
+          <ul class="menu-list"></ul>
         </div>
 
-        <!-- LUNCH -->
-        <div style="margin-bottom: 4rem;">
-          <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; color: var(--color-primary-dark);">Lunch &amp; Plates</h2>
-          <div class="hero__photo-frame" style="height: auto; background-color: transparent; border: none; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <img src="images/menu-toastie.jpg" alt="Club sandwich triangles served with a side of golden fries" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); display: block;">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Grilled Chicken &amp; Avo Wrap</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Tender grilled chicken breast, fresh avocado, crisp greens, and house mayo wrapped in a toasted tortilla.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R85</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Classic Toasted Toastie</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Choice of cheese &amp; tomato, ham &amp; cheese, or chicken mayo on artisanal farm bread.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R60</span>
-            </div>
-          </div>
+        <div class="menu-section" data-category="breakfast">
+          <h2 class="menu-section__title">All-Day Breakfast</h2>
+          <figure class="menu-photo">
+            <img src="images/menu-signature-breakfast.jpg" alt="Two fried eggs, bacon, and grilled toast served with ketchup and butter" loading="lazy" width="1000" height="1067" decoding="async">
+          </figure>
+          <ul class="menu-list"></ul>
         </div>
 
-        <!-- FAST FOOD -->
-        <div style="margin-bottom: 4rem;">
-          <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; color: var(--color-primary-dark);">Fast Food</h2>
-          <div class="hero__photo-frame" style="height: auto; background-color: transparent; border: none; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <img src="images/menu-fast-food.jpg" alt="Café Queene branded burger with fries and dipping sauce on a wooden board" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); display: block;">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Queene's Burger</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Beef patty with bacon, melted cheese, a fried egg, and rocket on a toasted bun, served with fries.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R110</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Cheese Burger Combo</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Classic cheese burger and fries, paired with an iced coffee of your choice.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R130</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Golden Fries</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Crispy, golden fries served with a side of tomato sauce.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R35</span>
-            </div>
-          </div>
+        <div class="menu-section" data-category="lunch">
+          <h2 class="menu-section__title">Lunch &amp; Plates</h2>
+          <figure class="menu-photo">
+            <img src="images/menu-toastie.jpg" alt="Club sandwich triangles served with a side of golden fries" loading="lazy" width="1000" height="1015" decoding="async">
+          </figure>
+          <ul class="menu-list"></ul>
         </div>
 
-        <!-- SNACKS & SWEETS -->
-        <div>
-          <h2 style="font-size: 2rem; margin-bottom: 2rem; border-bottom: 2px solid var(--color-border); padding-bottom: 0.5rem; color: var(--color-primary-dark);">Snacks &amp; Sweets</h2>
-          <div class="hero__photo-frame" style="height: auto; background-color: transparent; border: none; margin-bottom: 2rem; max-width: 500px; margin-left: auto; margin-right: auto;">
-            <img src="images/menu-muffin-basket.jpg" alt="An assortment of freshly baked muffins on a cooling rack, served with lattes" style="width: 100%; height: auto; object-fit: contain; border-radius: var(--radius); display: block;">
-          </div>
-          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1.25rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Blueberry Crumble Muffin</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Soft-baked muffin studded with blueberries and topped with a sweet crumble.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R35</span>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 1rem;">
-              <div>
-                <h3 style="font-size: 1.15rem; margin-bottom: 0.25rem;">Double Chocolate Chip Cookie</h3>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">A large, chewy cookie loaded with chocolate chips — perfect with a coffee.</p>
-              </div>
-              <span style="font-weight: 700; color: var(--color-primary); white-space: nowrap;">R30</span>
-            </div>
-          </div>
+        <div class="menu-section" data-category="fast-food">
+          <h2 class="menu-section__title">Fast Food</h2>
+          <figure class="menu-photo">
+            <img src="images/menu-fast-food.jpg" alt="Café Queene branded burger with fries and dipping sauce on a wooden board" loading="lazy" width="629" height="389" decoding="async">
+          </figure>
+          <ul class="menu-list"></ul>
         </div>
+
+        <div class="menu-section" data-category="snacks">
+          <h2 class="menu-section__title">Snacks &amp; Sweets</h2>
+          <figure class="menu-photo">
+            <img src="images/menu-muffin-basket.jpg" alt="An assortment of freshly baked muffins on a cooling rack, served with lattes" loading="lazy" width="1000" height="1013" decoding="async">
+          </figure>
+          <ul class="menu-list"></ul>
+        </div>
+
+        <p class="menu-note text-center">Planning a group visit, event or catering? <a href="enquiry.html">Send us an enquiry</a> or <a href="contact.html">find your nearest branch</a>.</p>
 
       </div>
     </section>
@@ -263,11 +170,11 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h4>Café Queene</h4>
+        <h2>Café Queene</h2>
         <p>Good coffee and good food in Middelburg and Nelspruit. Come as you are, stay as long as you like.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2>Explore</h2>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Menu</a></li>
@@ -275,7 +182,7 @@
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2>Visit</h2>
         <ul>
           <li><a href="contact.html">Middelburg Branch</a></li>
           <li><a href="contact.html">Nelspruit Branch</a></li>
@@ -287,5 +194,6 @@
     </div>
   </footer>
 
+  <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -1,18 +1,162 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-ZA">
 <head>
   <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://unpkg.com; style-src 'self' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://unpkg.com https://tile.openstreetmap.org; connect-src 'none'; form-action 'self' mailto:; base-uri 'self'; object-src 'none'" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Café Queene — Middelburg &amp; Nelspruit</title>
-  <meta name="description" content="Get in touch with Café Queene. Find our branch addresses, telephone numbers, email contacts, maps, and operating hours for Middelburg and Nelspruit." />
+  <title>Contact, Hours &amp; Map | Café Queene Middelburg &amp; Nelspruit</title>
+  <meta name="description" content="Find Café Queene in Middelburg and Nelspruit: addresses, phone numbers, emails, opening hours and an interactive map. Send us a message online." />
+  <link rel="canonical" href="https://YOUR-SITE-URL/contact.html" />
+  <meta name="theme-color" content="#c1502e" />
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
 
+  <!-- Open Graph and Twitter cards (how the page looks when shared) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Café Queene" />
+  <meta property="og:locale" content="en_ZA" />
+  <meta property="og:title" content="Contact, Hours &amp; Map | Café Queene Middelburg &amp; Nelspruit" />
+  <meta property="og:description" content="Find Café Queene in Middelburg and Nelspruit: addresses, phone numbers, emails, opening hours and an interactive map. Send us a message online." />
+  <meta property="og:url" content="https://YOUR-SITE-URL/contact.html" />
+  <meta property="og:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="A Café Queene branded latte with heart-shaped foam art, coffee beans and a croissant" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Contact, Hours &amp; Map | Café Queene Middelburg &amp; Nelspruit" />
+  <meta name="twitter:description" content="Find Café Queene in Middelburg and Nelspruit: addresses, phone numbers, emails, opening hours and an interactive map. Send us a message online." />
+  <meta name="twitter:image" content="https://YOUR-SITE-URL/images/og-image.jpg" />
+
+  <!-- Structured data for search engines (schema.org) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CafeOrCoffeeShop",
+      "@id": "https://YOUR-SITE-URL/contact.html#middelburg",
+      "name": "Café Queene — Middelburg",
+      "url": "https://YOUR-SITE-URL/contact.html",
+      "image": "https://YOUR-SITE-URL/images/og-image.jpg",
+      "telephone": "+27761564860",
+      "email": "middelburg@cafequeene.co.za",
+      "priceRange": "R30–R130",
+      "servesCuisine": [
+        "Coffee",
+        "Breakfast",
+        "Lunch"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "28 Joubert St",
+        "addressLocality": "Middelburg",
+        "addressRegion": "Mpumalanga",
+        "postalCode": "1050",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.7765,
+        "longitude": 29.4626
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Café Queene",
+        "url": "https://YOUR-SITE-URL/"
+      }
+    },
+    {
+      "@type": "CafeOrCoffeeShop",
+      "@id": "https://YOUR-SITE-URL/contact.html#nelspruit",
+      "name": "Café Queene — Nelspruit",
+      "url": "https://YOUR-SITE-URL/contact.html",
+      "image": "https://YOUR-SITE-URL/images/og-image.jpg",
+      "telephone": "+27825141290",
+      "email": "nelspruit@cafequeene.co.za",
+      "priceRange": "R30–R130",
+      "servesCuisine": [
+        "Coffee",
+        "Breakfast",
+        "Lunch"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "41 Ferreira St",
+        "addressLocality": "Mbombela",
+        "addressRegion": "Mpumalanga",
+        "postalCode": "1201",
+        "addressCountry": "ZA"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": -25.4744,
+        "longitude": 30.9691
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
+          ],
+          "opens": "07:00",
+          "closes": "18:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "08:00",
+          "closes": "16:00"
+        }
+      ],
+      "parentOrganization": {
+        "@type": "Organization",
+        "name": "Café Queene",
+        "url": "https://YOUR-SITE-URL/"
+      }
+    }
+  ]
+}
+  </script>
+
+  <link rel="preconnect" href="https://unpkg.com" crossorigin>
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <nav class="nav container" aria-label="Main navigation">
@@ -24,6 +168,12 @@
         <a href="index.html" class="nav__logo">Café <span>Queene</span></a>
       </div>
 
+      <button class="nav__toggle" type="button" aria-controls="primary-nav" aria-expanded="false" aria-label="Open navigation menu">
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+        <span class="nav__toggle-bar"></span>
+      </button>
+
       <ul class="nav__links" id="primary-nav">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About Us</a></li>
@@ -34,85 +184,173 @@
     </nav>
   </header>
 
-  <main>
+  <main id="main">
 
     <!-- PAGE HEADER -->
     <section class="section">
       <div class="container text-center">
         <p class="eyebrow">Get in Touch</p>
         <h1 class="section-title">Visit our branches or reach out to us.</h1>
-        <p style="color: var(--color-text-muted); max-width: 600px; margin: -1.5rem auto 0;">
-          Whether you want to drop by for a flat white or send us a message, we'd love to hear from you.
+        <p class="page-intro">
+          Whether you want to drop by for a flat white or send us a message, we'd love to hear from you. For bookings, catering or events, please use our <a href="enquiry.html">enquiry form</a>.
         </p>
       </div>
     </section>
 
     <!-- BRANCHES INFO SECTION -->
-    <section class="section features" style="padding-top: 2rem;">
+    <section class="section features section--tight-top">
       <div class="container">
-        
-        <div class="branches__grid" style="grid-template-columns: repeat(2, 1fr); margin-bottom: 4rem; gap: 2rem;">
-          
+        <div class="branches__grid">
+
           <!-- MIDDELBURG BRANCH -->
-          <article class="branch-card" style="background-color: var(--color-bg); display: flex; flex-direction: column; justify-content: space-between;">
+          <article class="branch-card branch-card--detailed">
             <div>
-              <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Café Queene — Middelburg</h3>
-              <p style="margin-bottom: 0.75rem;"><strong>Address:</strong><br>28 Joubert St, Middelburg, 1050</p>
-              <p style="margin-bottom: 0.75rem;"><strong>Phone:</strong><br><a href="tel:+27761564860" style="color: var(--color-primary);">+27 76 156 4860</a></p>
-              <p style="margin-bottom: 1.5rem;"><strong>Email:</strong><br><a href="mailto:middelburg@cafequeene.co.za" style="color: var(--color-primary);">middelburg@cafequeene.co.za</a></p>
-              
-              <div style="border-top: 1px solid var(--color-border); margin-top: 1rem; padding-top: 1rem; margin-bottom: 1.5rem;">
-                <strong style="display: block; margin-bottom: 0.5rem;">Operating Hours:</strong>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Monday – Saturday: 7:00 AM – 6:00 PM</p>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Sunday: 8:00 AM – 4:00 PM</p>
+              <h2 class="branch-card__title">Café Queene — Middelburg</h2>
+              <p class="branch-card__detail"><strong>Address:</strong><br>28 Joubert St, Middelburg, 1050</p>
+              <p class="branch-card__detail"><strong>Phone:</strong><br><a href="tel:+27761564860">+27 76 156 4860</a></p>
+              <p class="branch-card__detail"><strong>Email:</strong><br><a href="mailto:middelburg@cafequeene.co.za">middelburg@cafequeene.co.za</a></p>
+
+              <div class="branch-card__hours">
+                <strong>Operating Hours:</strong>
+                <p>Monday – Saturday: 7:00 AM – 6:00 PM</p>
+                <p>Sunday: 8:00 AM – 4:00 PM</p>
               </div>
             </div>
-
-            <!-- Google Map Embed Middelburg -->
-            <div style="border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); height: 250px;">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3594.5511210834247!2d29.4626!3d-25.7765!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec2038b3c3b3b3b%3A0x0!2s28%20Joubert%20St%2C%20Middelburg%2C%201050!5e0!3m2!1sen!2sza!4v1650000000000!5m2!1sen!2sza" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
+            <p class="branch-card__link"><a href="https://www.google.com/maps/search/?api=1&amp;query=28+Joubert+St+Middelburg+1050" target="_blank" rel="noopener noreferrer">Open in Google Maps (new tab)</a></p>
           </article>
 
           <!-- NELSPRUIT BRANCH -->
-          <article class="branch-card" style="background-color: var(--color-bg); display: flex; flex-direction: column; justify-content: space-between;">
+          <article class="branch-card branch-card--detailed">
             <div>
-              <h3 style="color: var(--color-primary-dark); margin-bottom: 1rem;">Café Queene — Nelspruit</h3>
-              <p style="margin-bottom: 0.75rem;"><strong>Address:</strong><br>41 Ferreira St, Mbombela, 1201</p>
-              <p style="margin-bottom: 0.75rem;"><strong>Phone:</strong><br><a href="tel:+27825141290" style="color: var(--color-primary);">+27 82 514 1290</a></p>
-              <p style="margin-bottom: 1.5rem;"><strong>Email:</strong><br><a href="mailto:nelspruit@cafequeene.co.za" style="color: var(--color-primary);">nelspruit@cafequeene.co.za</a></p>
-              
-              <div style="border-top: 1px solid var(--color-border); margin-top: 1rem; padding-top: 1rem; margin-bottom: 1.5rem;">
-                <strong style="display: block; margin-bottom: 0.5rem;">Operating Hours:</strong>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Monday – Saturday: 7:00 AM – 6:00 PM</p>
-                <p style="color: var(--color-text-muted); font-size: 0.95rem;">Sunday: 8:00 AM – 4:00 PM</p>
+              <h2 class="branch-card__title">Café Queene — Nelspruit</h2>
+              <p class="branch-card__detail"><strong>Address:</strong><br>41 Ferreira St, Mbombela, 1201</p>
+              <p class="branch-card__detail"><strong>Phone:</strong><br><a href="tel:+27825141290">+27 82 514 1290</a></p>
+              <p class="branch-card__detail"><strong>Email:</strong><br><a href="mailto:nelspruit@cafequeene.co.za">nelspruit@cafequeene.co.za</a></p>
+
+              <div class="branch-card__hours">
+                <strong>Operating Hours:</strong>
+                <p>Monday – Saturday: 7:00 AM – 6:00 PM</p>
+                <p>Sunday: 8:00 AM – 4:00 PM</p>
               </div>
             </div>
-
-            <!-- Google Map Embed Nelspruit -->
-            <div style="border-radius: var(--radius); overflow: hidden; border: 1px solid var(--color-border); height: 250px;">
-              <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3619.897451234567!2d30.9691!3d-25.4744!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xec84bee3c3b3b3b%3A0x0!2s41%20Ferreira%20St%2C%20Mbombela%2C%201201!5e0!3m2!1sen!2sza!4v1650000000000!5m2!1sen!2sza" 
-                width="100%" 
-                height="100%" 
-                style="border:0;" 
-                allowfullscreen="" 
-                loading="lazy" 
-                referrerpolicy="no-referrer-when-downgrade">
-              </iframe>
-            </div>
+            <p class="branch-card__link"><a href="https://www.google.com/maps/search/?api=1&amp;query=41+Ferreira+St+Mbombela+1201" target="_blank" rel="noopener noreferrer">Open in Google Maps (new tab)</a></p>
           </article>
 
         </div>
+      </div>
+    </section>
 
+
+    <!-- INTERACTIVE MAP -->
+    <section class="section container">
+      <div class="text-center">
+        <p class="eyebrow">Find Us</p>
+        <h2 class="section-title">Our two branches on the map.</h2>
+      </div>
+
+      <div class="map-controls" role="group" aria-label="Choose what the map shows">
+        <button type="button" class="filter-btn" data-map-target="all" aria-pressed="true">Both branches</button>
+        <button type="button" class="filter-btn" data-map-target="middelburg" aria-pressed="false">Middelburg</button>
+        <button type="button" class="filter-btn" data-map-target="nelspruit" aria-pressed="false">Nelspruit</button>
+      </div>
+
+      <div id="branch-map" class="branch-map" role="region" aria-label="Map showing Café Queene in Middelburg and Nelspruit"></div>
+      <p class="map-fallback" id="map-fallback" hidden>The interactive map could not load. Please use the "Open in Google Maps" links above.</p>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section class="section">
+      <div class="container">
+        <div class="text-center">
+          <p class="eyebrow">Send a Message</p>
+          <h2 class="section-title">Write to us directly.</h2>
+        </div>
+
+        <div class="form-card">
+
+          <form class="form" id="contact-form" action="mailto:middelburg@cafequeene.co.za" method="post" enctype="text/plain" novalidate>
+
+            <p class="form-note">Fields marked <span class="req">*</span> are required.</p>
+
+            <div class="form-group">
+              <label for="contact-name">Your name <span class="req">*</span></label>
+              <input class="form-control" type="text" id="contact-name" name="name" data-rule="name" autocomplete="name" maxlength="60" required placeholder="e.g. Queene Mavuso" aria-describedby="contact-name-error">
+              <p class="form-error" id="contact-name-error" role="alert"></p>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-email">Email address <span class="req">*</span></label>
+                <input class="form-control" type="email" id="contact-email" name="email" data-rule="email" autocomplete="email" required placeholder="e.g. name@example.com" aria-describedby="contact-email-error">
+                <p class="form-error" id="contact-email-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-phone">Phone number (optional)</label>
+                <input class="form-control" type="tel" id="contact-phone" name="phone" data-rule="phone" autocomplete="tel" placeholder="e.g. 082 123 4567" aria-describedby="contact-phone-error">
+                <p class="form-error" id="contact-phone-error" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-type">Type of message <span class="req">*</span></label>
+                <select class="form-control" id="contact-type" name="message_type" data-rule="select" required aria-describedby="contact-type-error">
+                  <option value="">Choose a message type</option>
+                  <option value="General message">General message</option>
+                  <option value="Compliment">Compliment</option>
+                  <option value="Feedback or suggestion">Feedback or suggestion</option>
+                  <option value="Complaint">Complaint</option>
+                  <option value="Opening hours or location">Opening hours or location</option>
+                </select>
+                <p class="form-error" id="contact-type-error" role="alert"></p>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-branch">Send to branch</label>
+                <select class="form-control" id="contact-branch" name="branch">
+                  <option value="middelburg">Middelburg Branch</option>
+                  <option value="nelspruit">Nelspruit Branch</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your message <span class="req">*</span></label>
+              <textarea class="form-control" id="contact-message" name="message" data-rule="message" rows="5" maxlength="500" required placeholder="Type your message here..." aria-describedby="contact-message-count contact-message-error"></textarea>
+              <p class="form-hint" id="contact-message-count">0 / 500 characters</p>
+              <p class="form-error" id="contact-message-error" role="alert"></p>
+            </div>
+
+            <!-- Spam trap: hidden from real visitors -->
+            <div class="form-hp" aria-hidden="true">
+              <label for="contact-website">Leave this field empty</label>
+              <input type="text" id="contact-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+
+            <button type="submit" class="btn btn--primary btn--block">Review my email</button>
+
+          </form>
+
+          <!-- Email built from the form, shown after a valid submission -->
+          <div class="email-preview" id="email-preview" tabindex="-1" hidden>
+            <h3 class="email-preview__title">Your email is ready</h3>
+            <p>Check the details below, then open it in your email app to send it.</p>
+            <dl class="email-preview__fields">
+              <dt>To</dt>
+              <dd id="preview-to"></dd>
+              <dt>Subject</dt>
+              <dd id="preview-subject"></dd>
+              <dt>Message</dt>
+              <dd id="preview-body" class="email-preview__body"></dd>
+            </dl>
+            <div class="email-preview__actions">
+              <a class="btn btn--primary" id="preview-send" href="#">Open in my email app</a>
+              <button type="button" class="btn btn--ghost" id="contact-edit">Edit my message</button>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
 
@@ -121,11 +359,11 @@
   <footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <h4>Café Queene</h4>
+        <h2>Café Queene</h2>
         <p>Good coffee and good food in Middelburg and Nelspruit. Come as you are, stay as long as you like.</p>
       </div>
       <div>
-        <h4>Explore</h4>
+        <h2>Explore</h2>
         <ul>
           <li><a href="about.html">About Us</a></li>
           <li><a href="menu.html">Menu</a></li>
@@ -133,7 +371,7 @@
         </ul>
       </div>
       <div>
-        <h4>Visit</h4>
+        <h2>Visit</h2>
         <ul>
           <li><a href="contact.html">Middelburg Branch</a></li>
           <li><a href="contact.html">Nelspruit Branch</a></li>
@@ -145,6 +383,8 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+          integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>
